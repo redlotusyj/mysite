@@ -1,0 +1,71 @@
+<!doctype html>
+<html lang="ko">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Studio Name</title>
+  <meta name="description" content="전자책 · 굿노트 · 노션 템플릿 소개">
+  <meta property="og:title" content="Studio Name">
+  <meta property="og:description" content="전자책 · 굿노트 · 노션 템플릿 소개">
+  <meta property="og:type" content="website">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@400;500;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <header class="site-header">
+    <div class="container header-inner">
+      <a href="#" class="logo" data-site="name"></a>
+      <nav class="nav">
+        <a href="#products" data-i18n="navProducts"></a>
+        <a href="#about" data-i18n="navAbout"></a>
+        <a href="#contact" data-i18n="navContact"></a>
+        <button type="button" class="lang-toggle" id="langToggle" aria-label="Change language">EN</button>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <section class="hero">
+      <div class="container">
+        <h1 data-site="name"></h1>
+        <p class="tagline" data-site="tagline"></p>
+        <div class="store-links" id="storeLinks"></div>
+      </div>
+    </section>
+
+    <section id="products" class="section">
+      <div class="container">
+        <h2 data-i18n="productsTitle"></h2>
+        <div class="filters" id="filters" role="tablist"></div>
+        <div class="grid" id="productGrid"></div>
+      </div>
+    </section>
+
+    <section id="about" class="section section-alt">
+      <div class="container narrow">
+        <h2 data-i18n="aboutTitle"></h2>
+        <p data-site="about"></p>
+      </div>
+    </section>
+
+    <section id="contact" class="section">
+      <div class="container narrow">
+        <h2 data-i18n="contactTitle"></h2>
+        <p><a id="emailLink" class="email"></a></p>
+        <div class="social" id="socialLinks"></div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container">
+      <small>&copy; <span id="year"></span> <span data-site="name"></span></small>
+    </div>
+  </footer>
+
+  <script src="products.js"></script>
+  <script src="main.js"></script>
+</body>
+</html>

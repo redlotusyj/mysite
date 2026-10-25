@@ -1,0 +1,121 @@
+:root {
+  --bg: #fbfaf7;
+  --bg-alt: #f2efe8;
+  --surface: #ffffff;
+  --text: #24221f;
+  --muted: #6b665e;
+  --border: #e4dfd5;
+  --accent: #3d5a4a;
+  --ebook: #e9dcc9;
+  --goodnotes: #d6e2e9;
+  --notion: #e3e0ec;
+  --kmong: #ffd400;
+  --etsy: #f1641e;
+  --gumroad: #ff90e8;
+  --radius: 14px;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --bg: #1a1918;
+    --bg-alt: #222120;
+    --surface: #262523;
+    --text: #ece9e3;
+    --muted: #a39e95;
+    --border: #3a3835;
+    --accent: #8fb9a1;
+    --ebook: #4a4033;
+    --goodnotes: #33424a;
+    --notion: #3d3a4a;
+  }
+}
+
+* { box-sizing: border-box; }
+
+body {
+  margin: 0;
+  font-family: "Noto Sans KR", system-ui, sans-serif;
+  background: var(--bg);
+  color: var(--text);
+  line-height: 1.6;
+}
+
+a { color: inherit; }
+img { max-width: 100%; display: block; }
+
+.container { max-width: 1080px; margin: 0 auto; padding: 0 16px; }
+.narrow { max-width: 680px; }
+
+.site-header {
+  position: sticky; top: 0; z-index: 10;
+  background: color-mix(in srgb, var(--bg) 88%, transparent);
+  backdrop-filter: blur(8px);
+  border-bottom: 1px solid var(--border);
+}
+.header-inner { display: flex; align-items: center; justify-content: space-between; height: 60px; }
+.logo { font-weight: 700; text-decoration: none; }
+.nav { display: flex; align-items: center; gap: 18px; font-size: 14px; }
+.nav a { text-decoration: none; color: var(--muted); }
+.nav a:hover { color: var(--text); }
+.lang-toggle {
+  border: 1px solid var(--border); background: var(--surface); color: var(--text);
+  border-radius: 999px; padding: 4px 10px; font-size: 12px; cursor: pointer;
+}
+
+.hero { padding: 88px 0 64px; text-align: center; }
+.hero h1 { font-size: clamp(32px, 6vw, 52px); margin: 0 0 12px; letter-spacing: -0.02em; }
+.tagline { color: var(--muted); font-size: 18px; margin: 0 0 28px; }
+.store-links { display: flex; gap: 10px; justify-content: center; flex-wrap: wrap; }
+
+.store-btn {
+  display: inline-block; padding: 8px 16px; border-radius: 999px;
+  font-size: 14px; font-weight: 500; text-decoration: none; color: #1a1a1a;
+  transition: transform .15s ease;
+}
+.store-btn:hover { transform: translateY(-1px); }
+.store-btn.kmong { background: var(--kmong); }
+.store-btn.etsy { background: var(--etsy); color: #fff; }
+.store-btn.gumroad { background: var(--gumroad); }
+
+.section { padding: 64px 0; }
+.section-alt { background: var(--bg-alt); }
+.section h2 { font-size: 24px; margin: 0 0 20px; }
+
+.filters { display: flex; gap: 8px; flex-wrap: wrap; margin-bottom: 24px; }
+.filters button {
+  border: 1px solid var(--border); background: var(--surface); color: var(--muted);
+  border-radius: 999px; padding: 6px 14px; font: inherit; font-size: 14px; cursor: pointer;
+}
+.filters button[aria-selected="true"] { background: var(--accent); border-color: var(--accent); color: var(--bg); }
+
+.grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(260px, 1fr)); gap: 20px; }
+
+.card {
+  background: var(--surface); border: 1px solid var(--border); border-radius: var(--radius);
+  overflow: hidden; display: flex; flex-direction: column;
+}
+.thumb { aspect-ratio: 4 / 3; display: grid; place-items: center; color: var(--muted); font-weight: 500; }
+.thumb img { width: 100%; height: 100%; object-fit: cover; }
+.thumb.ebook { background: var(--ebook); }
+.thumb.goodnotes { background: var(--goodnotes); }
+.thumb.notion { background: var(--notion); }
+
+.card-body { padding: 18px; display: flex; flex-direction: column; flex: 1; }
+.badge { font-size: 12px; color: var(--accent); font-weight: 500; }
+.card h3 { margin: 4px 0 6px; font-size: 18px; }
+.desc { margin: 0 0 10px; color: var(--muted); font-size: 14px; flex: 1; }
+.price { margin: 0 0 14px; font-weight: 700; }
+.card-links { display: flex; gap: 8px; flex-wrap: wrap; }
+.card-links .store-btn { font-size: 13px; padding: 6px 12px; }
+.empty { color: var(--muted); }
+
+.email { font-size: 18px; color: var(--accent); }
+.social { display: flex; gap: 16px; flex-wrap: wrap; }
+.social a { color: var(--muted); }
+
+.site-footer { border-top: 1px solid var(--border); padding: 24px 0; color: var(--muted); text-align: center; }
+
+@media (max-width: 560px) {
+  .nav { gap: 12px; }
+  .hero { padding: 56px 0 40px; }
+}
